@@ -1,0 +1,17 @@
+
+public class FactorialCalculator {
+    public int calculateFactorial(int number) {
+        int result = 1;
+        for (int i = 1; i <= number; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        FactorialCalculator calculator = new FactorialCalculator();
+        int number = 5;
+        int factorial = calculator.calculateFactorial(number);
+        System.out.println("Factorial of " + number + " is: " + factorial);
+    }
+}
