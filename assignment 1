@@ -1,17 +1,36 @@
+import java.util.Scanner;
 
-public class FactorialCalculator {
-    public int calculateFactorial(int number) {
+class Calculator {
+    private int number; 
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public int calculateFactorial() {
         int result = 1;
         for (int i = 1; i <= number; i++) {
             result *= i;
         }
         return result;
     }
+}
 
+public class FactorialApp {
     public static void main(String[] args) {
-        FactorialCalculator calculator = new FactorialCalculator();
-        int number = 5;
-        int factorial = calculator.calculateFactorial(number);
-        System.out.println("Factorial of " + number + " is: " + factorial);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number to calculate factorial: ");
+        int number = scanner.nextInt();
+
+        Calculator calculator = new Calculator();
+        calculator.setNumber(number);
+        System.out.println("Factorial: " + calculator.calculateFactorial());
+
+        scanner.close();
     }
 }
+
